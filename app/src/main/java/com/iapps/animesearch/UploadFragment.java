@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.iapps.animesearch.model.trace.TraceResult;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -27,8 +28,8 @@ import static android.app.Activity.RESULT_OK;
 public class UploadFragment extends Fragment {
 
     ImageView imageView;
-    Button button;
-
+    Button button, button1;
+    private TraceResult traceResult;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +39,7 @@ public class UploadFragment extends Fragment {
 
         imageView = (ImageView) view.findViewById(R.id.image_uploaded);
         button = (Button) view.findViewById(R.id.btnUpload);
+        button1 = (Button) view.findViewById(R.id.btnSearchupload);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +54,15 @@ public class UploadFragment extends Fragment {
                 else {
                     startGallery();
                 }
+            }
+        });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                intent.putExtra("result", traceResult.getAnilist());
+                startActivity(intent);
             }
         });
 

@@ -47,7 +47,7 @@ public class AnimeViewModel extends ViewModel {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public AnimeViewModel(JikanResult item) {
-        this.title = item.getTitle();
+        this.title = "anime 2";
         this.title_japanese = item.getTitleJapanese();
         this.synopsis = item.getSynopsis();
         this.status = item.getStatus();
@@ -86,6 +86,7 @@ public class AnimeViewModel extends ViewModel {
                     jikanResult = response.body();
                     Log.d("cekcek", response.body().getTitle());
                     AnimeViewModel animeViewModel = new AnimeViewModel(jikanResult);
+                    Log.d("tes", String.valueOf(animeViewModel.episodes));
                     mutableLiveData.setValue(animeViewModel);
 
                 }catch (Exception e){

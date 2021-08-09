@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.List;
 
-public class JikanResult implements Serializable {
+public class JikanResult  {
     @SerializedName("request_hash")
     @Expose
     private String requestHash;

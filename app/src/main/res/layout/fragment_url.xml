@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UrlFragment">
+    tools:context=".UrlFragment"
+    android:background="#eb8334">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout

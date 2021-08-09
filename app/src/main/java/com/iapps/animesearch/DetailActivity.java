@@ -29,7 +29,6 @@ import retrofit2.Response;
 public class DetailActivity extends AppCompatActivity {
 
     private Toolbar toolbars;
-    private JikanResult jikanResult;
     private AnimeViewModel animeViewModel;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -38,13 +37,15 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        DetailBinding activityMainBinding = DataBindingUtil.setContentView(DetailActivity.this, R.layout.activity_detail);
         int data = (Integer) getIntent().getIntExtra("result", 0);
         animeViewModel = ViewModelProviders.of(this).get(AnimeViewModel.class);
         animeViewModel.getMutableLiveData(data).observe(this, new Observer<AnimeViewModel>() {
             @Override
             public void onChanged(AnimeViewModel animeViewModel) {
-                DetailBinding activityMainBinding = DataBindingUtil.setContentView(DetailActivity.this, R.layout.activity_detail);
+
                 activityMainBinding.setViewModel(animeViewModel);
+                activityMainBinding.executePendingBindings();
             }
         });
 

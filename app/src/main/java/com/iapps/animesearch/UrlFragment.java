@@ -54,50 +54,7 @@ public class UrlFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_url, container, false);
 
         button = (Button) view.findViewById(R.id.btnSearch);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DetailActivity.class);
-                intent.putExtra("result", traceResult.getAnilist());
-                startActivity(intent);
-            }
-        });
-
-
         editText = (EditText) view.findViewById(R.id.search_edit);
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                webView.loadUrl("https://api.trace.moe/search?url="+ searchView.getQuery());
-//                ApiService service = ApiClient.getTraceInstance().getAPIService();
-//                Call<example> result = service.getexample(query);
-//
-//                result.enqueue(new Callback<example>() {
-//                    @Override
-//                    public void onResponse(Call<example> call, Response<example> response) {
-//                        try {
-//                            traceResult = response.body().getResult().get(0);
-//                            button.setVisibility(View.VISIBLE);
-//                            Log.d("cekcek", response.body().toString());
-//                        }catch (Exception e){
-//                            e.printStackTrace();
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<example> call, Throwable t) {
-//
-//                    }
-//                });
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                return false;
-//            }
-//        });
 
         editText.setOnEditorActionListener(new EditText.OnEditorActionListener() {
             @Override
@@ -112,7 +69,7 @@ public class UrlFragment extends Fragment {
                             try {
                                 traceResult = response.body().getResult().get(0);
                                 button.setVisibility(View.VISIBLE);
-                                Log.d("cekcek", response.body().toString());
+                                Log.d("cekcek", response.body().getResult().get(0).getFilename());
                             }catch (Exception e){
                                 e.printStackTrace();
                             }
@@ -126,6 +83,15 @@ public class UrlFragment extends Fragment {
                     return true;
                 }
                 return false;
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                intent.putExtra("result", traceResult.getAnilist());
+                startActivity(intent);
             }
         });
 
