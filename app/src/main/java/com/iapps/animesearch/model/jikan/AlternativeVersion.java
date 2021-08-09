@@ -3,9 +3,7 @@ package com.iapps.animesearch.model.jikan;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
-
-public class Summary implements Serializable {
+public class AlternativeVersion {
 
     @SerializedName("mal_id")
     @Expose
@@ -51,5 +49,4 @@ public class Summary implements Serializable {
     public void setUrl(String url) {
         this.url = url;
     }
-
 }

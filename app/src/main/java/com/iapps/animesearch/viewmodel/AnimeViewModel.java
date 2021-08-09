@@ -47,7 +47,7 @@ public class AnimeViewModel extends ViewModel {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public AnimeViewModel(JikanResult item) {
-        this.title = "anime 2";
+        this.title = item.getTitle();
         this.title_japanese = item.getTitleJapanese();
         this.synopsis = item.getSynopsis();
         this.status = item.getStatus();

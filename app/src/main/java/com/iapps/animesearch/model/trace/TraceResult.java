@@ -9,7 +9,7 @@ public class TraceResult implements Serializable {
 
     @SerializedName("anilist")
     @Expose
-    private Integer anilist;
+    private Anilist anilist;
     @SerializedName("filename")
     @Expose
     private String filename;
@@ -32,11 +32,11 @@ public class TraceResult implements Serializable {
     @Expose
     private String image;
 
-    public Integer getAnilist() {
+    public Anilist getAnilist() {
         return anilist;
     }
 
-    public void setAnilist(Integer anilist) {
+    public void setAnilist(Anilist anilist) {
         this.anilist = anilist;
     }
 

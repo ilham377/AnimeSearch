@@ -11,12 +11,12 @@ public class Related implements Serializable {
     @SerializedName("Adaptation")
     @Expose
     private List<Adaptation> adaptation = null;
+    @SerializedName("Alternative version")
+    @Expose
+    private List<AlternativeVersion> alternativeVersion = null;
     @SerializedName("Side story")
     @Expose
     private List<SideStory> sideStory = null;
-    @SerializedName("Summary")
-    @Expose
-    private List<Summary> summary = null;
 
     public List<Adaptation> getAdaptation() {
         return adaptation;
@@ -26,20 +26,20 @@ public class Related implements Serializable {
         this.adaptation = adaptation;
     }
 
+    public List<AlternativeVersion> getAlternativeVersion() {
+        return alternativeVersion;
+    }
+
+    public void setAlternativeVersion(List<AlternativeVersion> alternativeVersion) {
+        this.alternativeVersion = alternativeVersion;
+    }
+
     public List<SideStory> getSideStory() {
         return sideStory;
     }
 
     public void setSideStory(List<SideStory> sideStory) {
         this.sideStory = sideStory;
-    }
-
-    public List<Summary> getSummary() {
-        return summary;
-    }
-
-    public void setSummary(List<Summary> summary) {
-        this.summary = summary;
     }
 
 }

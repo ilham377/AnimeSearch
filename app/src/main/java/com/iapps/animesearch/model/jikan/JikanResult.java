@@ -39,7 +39,7 @@ public class JikanResult  {
     private String titleJapanese;
     @SerializedName("title_synonyms")
     @Expose
-    private List<Object> titleSynonyms = null;
+    private List<String> titleSynonyms = null;
     @SerializedName("type")
     @Expose
     private String type;
@@ -87,7 +87,7 @@ public class JikanResult  {
     private String synopsis;
     @SerializedName("background")
     @Expose
-    private String background;
+    private Object background;
     @SerializedName("premiered")
     @Expose
     private String premiered;
@@ -196,11 +196,11 @@ public class JikanResult  {
         this.titleJapanese = titleJapanese;
     }
 
-    public List<Object> getTitleSynonyms() {
+    public List<String> getTitleSynonyms() {
         return titleSynonyms;
     }
 
-    public void setTitleSynonyms(List<Object> titleSynonyms) {
+    public void setTitleSynonyms(List<String> titleSynonyms) {
         this.titleSynonyms = titleSynonyms;
     }
 
@@ -324,11 +324,11 @@ public class JikanResult  {
         this.synopsis = synopsis;
     }
 
-    public String getBackground() {
+    public Object getBackground() {
         return background;
     }
 
-    public void setBackground(String background) {
+    public void setBackground(Object background) {
         this.background = background;
     }
 

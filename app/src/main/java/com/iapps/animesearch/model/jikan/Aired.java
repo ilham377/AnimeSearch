@@ -15,7 +15,7 @@ public class Aired implements Serializable {
     private String to;
     @SerializedName("prop")
     @Expose
-    private String prop;
+    private Prop prop;
     @SerializedName("string")
     @Expose
     private String string;
@@ -36,11 +36,11 @@ public class Aired implements Serializable {
         this.to = to;
     }
 
-    public String getProp() {
+    public Prop getProp() {
         return prop;
     }
 
-    public void setProp(String prop) {
+    public void setProp(Prop prop) {
         this.prop = prop;
     }
 

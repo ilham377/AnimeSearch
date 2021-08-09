@@ -42,6 +42,8 @@ public class ApiClient {
                 .build();
     }
 
+
+
     public static synchronized ApiClient getInstance() {
         apiClient = new ApiClient();
         return apiClient;
@@ -61,3 +63,5 @@ public class ApiClient {
 
 
 }
+
+

@@ -61,7 +61,7 @@ public class UrlFragment extends Fragment {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     ApiService service = ApiClient.getTraceInstance().getAPIService();
-                    Call<example> result = service.getexample(editText.getText().toString());
+                    Call<example> result = service.getexample("anilistInfo", editText.getText().toString());
 
                     result.enqueue(new Callback<example>() {
                         @Override
@@ -90,7 +90,7 @@ public class UrlFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), DetailActivity.class);
-                intent.putExtra("result", traceResult.getAnilist());
+                intent.putExtra("result", traceResult.getAnilist().getIdMal());
                 startActivity(intent);
             }
         });

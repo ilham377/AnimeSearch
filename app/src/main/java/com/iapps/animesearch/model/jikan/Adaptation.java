@@ -52,4 +52,5 @@ public class Adaptation implements Serializable {
         this.url = url;
     }
 
+
 }

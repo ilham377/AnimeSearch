@@ -114,15 +114,6 @@
                             android:gravity="center"
                             android:orientation="vertical">
 
-                            <RatingBar
-                                style="?ratingBarStyleSmall"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:numStars="5"
-                                android:rating="@{viewModel.score}"
-                                android:stepSize="0.1"
-                                android:theme="@style/RatingBar" />
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -180,7 +171,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="@{viewModel.status}"
                                 android:textColor="#838EAB"
-                                android:textSize="20dp" />
+                                android:textSize="15sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -209,7 +200,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@{viewModel.genre}"
-                        android:textColor="#838EAB" />
+                        android:textColor="#838EAB"
+                        android:layout_marginBottom="10dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -222,8 +214,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{viewModel.synopsis.substring(0, 300)}"
-                        android:textColor="#838EAB" />
+                        android:text="@{viewModel.synopsis}"
+                        android:textColor="#838EAB"
+                        android:layout_marginBottom="50dp"/>
 
                 </LinearLayout>
             </LinearLayout>
